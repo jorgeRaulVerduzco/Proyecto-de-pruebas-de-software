@@ -105,5 +105,19 @@ public class PagoBOTest {
         assertEquals(9, pagoPorOxxoDTO.getCodigoBarrasOxxo().length());
     }
 
-   
+    @Test
+    public void testComprarProductoPorTarjeta() throws PersistenciaException {
+        // Arrange
+        pagoPorTarjetaDTO.setUsuarioDTO(Arrays.asList(usuarioDTO));
+        pagoPorTarjetaDTO.setProductoDTO(Arrays.asList(productoDTO));
+
+        // Act
+        pagoBO.ComprarProductoPorTarjeta(pagoPorTarjetaDTO);
+
+        // Assert
+        assertNotNull(pagoPorTarjetaDTO.getNumeroTarjeta());
+        assertEquals(16, pagoPorTarjetaDTO.getNumeroTarjeta().length());
+    }
+
+ 
 }
