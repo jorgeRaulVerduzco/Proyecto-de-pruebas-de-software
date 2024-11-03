@@ -71,7 +71,17 @@ public class RentaBOTest {
 
     }
 
- 
+    @Test
+    public void testRentarProductoPorOxxo() {
+        //arrenge
+        RentaPorOxxoDTO rentaPorOxxoDTO = new RentaPorOxxoDTO("1234567890");
+        //act
+        rentaBO.rentarProductoPorOxxo(rentaPorOxxoDTO);
+        //assert
+        assertTrue(true);
 
+    }
+
+    
     
 }
