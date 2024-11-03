@@ -42,7 +42,6 @@ public class UsuarioBOTest {
     @Test
     public void testBuscarUsuario() {
         System.out.println("buscarUsuario");
-        
         //arrenge
         String nombreUsuario = "testUser";
         String contraseña = "testPassword";
@@ -56,6 +55,23 @@ public class UsuarioBOTest {
         System.out.println(result);
         //Assert
         assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testUsuarioInicioSesion() {
+        System.out.println("UsuarioInicioSesion");
+        //arrenge
+        String nombreUsuario = "testUser";
+        String contraseña = "testPassword";
+        UsuarioDTO usuarioDTO = new UsuarioDTO(nombreUsuario, contraseña);
+        usuarioDTO.setProductos(new ArrayList<>());
+        //act
+        usuarioBO.agregarUsuario(usuarioDTO);
+        UsuarioDTO expResult = new UsuarioDTO(nombreUsuario, contraseña);
+        UsuarioDTO result = usuarioBO.UsuarioInicioSesion(nombreUsuario, contraseña);
+        //assert
+        assertEquals(expResult.getNombreUsuario(), result.getNombreUsuario());
+        assertEquals(expResult.getContraseña(), result.getContraseña());
     }
 
 }
