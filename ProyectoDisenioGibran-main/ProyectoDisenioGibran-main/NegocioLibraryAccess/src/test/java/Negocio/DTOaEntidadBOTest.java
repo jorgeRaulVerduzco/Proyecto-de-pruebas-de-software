@@ -270,13 +270,23 @@ public class DTOaEntidadBOTest {
     @Test
     public void testConvertitRentaPorTarjetaDTO() {
         System.out.println("convertitRentaPorTarjetaDTO");
-        RentaPorTarjetaDTO rentaPorTarjetaDTO = null;
+//ARRENGE
+        String tipoTarjeta = "Visa";
+        String numeroTarjeta = "4111111111111111";
+        Date fechaExpiracion = new Date(System.currentTimeMillis());
+        String codigoSeguridad = "123";
+        RentaPorTarjetaDTO rentaPorTarjetaDTO = new RentaPorTarjetaDTO(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
         DTOaEntidadBO instance = new DTOaEntidadBO();
-        RentaPorTarjeta expResult = null;
+
+        // ACT
         RentaPorTarjeta result = instance.convertitRentaPorTarjetaDTO(rentaPorTarjetaDTO);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        RentaPorTarjeta expResult = new RentaPorTarjeta(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
+
+        // Assert
+        assertEquals(expResult.getTipoTarjeta(), result.getTipoTarjeta(), "El tipo de tarjeta debería ser igual.");
+        assertEquals(expResult.getNumeroTarjeta(), result.getNumeroTarjeta(), "El número de tarjeta debería ser igual.");
+        assertEquals(expResult.getFechaExpiracion(), result.getFechaExpiracion(), "La fecha de expiración debería ser igual.");
+        assertEquals(expResult.getCodigoSeguridad(), result.getCodigoSeguridad(), "El código de seguridad debería ser igual.");
     }
 
 }
