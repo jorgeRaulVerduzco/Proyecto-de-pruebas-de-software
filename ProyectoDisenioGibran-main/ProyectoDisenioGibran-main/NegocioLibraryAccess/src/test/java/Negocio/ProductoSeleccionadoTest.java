@@ -35,4 +35,22 @@ public class ProductoSeleccionadoTest {
         assertEquals( producto, result);
     }
 
+    /**
+     * Test of setPersonaSeleccionada method, of class ProductoSeleccionado.
+     */
+    @Test
+    public void testSetPersonaSeleccionada() {
+        System.out.println("setPersonaSeleccionada");
+
+        // arrenge
+        ProductoDTO producto = new ProductoDTO(67890, "Producto Test 2", "Autor Test 2", "Tipo Test 2", "Editorial Test 2", 19.99, "Categoría Test 2", 10);
+        
+        // act
+        ProductoSeleccionado.setPersonaSeleccionada(producto);
+
+        // assert 
+        ProductoDTO result = ProductoSeleccionado.getPersonaSeleccionada();
+        assertEquals(producto, result);
+     
+    }
 }
