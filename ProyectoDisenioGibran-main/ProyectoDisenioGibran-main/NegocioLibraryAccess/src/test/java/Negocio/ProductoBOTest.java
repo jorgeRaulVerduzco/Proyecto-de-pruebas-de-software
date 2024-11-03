@@ -115,5 +115,27 @@ public class ProductoBOTest {
         assertTrue(productos.size() >= 2);
     }
 
-   
+    @Test
+    public void testConvertirAProductoDTO() {
+        // Arrange
+        Producto producto = new Producto();
+        producto.setIsbn(123456);
+        producto.setTitulo("Test Título");
+        producto.setAutor("Test Autor");
+        producto.setTipo("Libro");
+        producto.setEditorial("Test Editorial");
+        producto.setPrecio(199.99);
+        producto.setCategoria("Test Categoría");
+        producto.setCantidad(3);
+
+        // Act
+        ProductoDTO resultado = productoBO.convertirAProductoDTO(producto);
+
+        // Assert
+        assertNotNull(resultado);
+        assertEquals(producto.getIsbn(), resultado.getIsbn());
+        assertEquals(producto.getTitulo(), resultado.getTitulo());
+        assertEquals(producto.getAutor(), resultado.getAutor());
+    }
+
 }
