@@ -41,5 +41,16 @@ public class PagoProvicionalTest {
 
     }
 
-   
+    /**
+     * Test of setPagoProvicional method, of class PagoProvicional.
+     */
+    @Test
+    public void testSetPagoProvicional() {
+        System.out.println("setPagoProvicional");
+//Act
+        PagoProvicional.setPagoProvicional(pagoDTO);
+//Assert
+        assertEquals(pagoDTO, PagoProvicional.getPagoProvicional());
+
+    }
 }
