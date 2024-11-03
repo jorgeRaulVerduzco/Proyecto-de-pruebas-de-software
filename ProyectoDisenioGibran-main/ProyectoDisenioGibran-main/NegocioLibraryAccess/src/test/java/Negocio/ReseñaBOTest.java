@@ -63,4 +63,15 @@ public class ReseñaBOTest {
         assertNotNull(reseñasObtenidas, "La lista de reseñas no debe ser null");
     }
 
+    @Test
+    public void testObtenerReseñasDeUsuario() {
+        System.out.println("Prueba de obtenerReseñasDeUsuario");
+        //Arrenge
+        List<Object> reseñasObtenidas;
+        //Act
+        reseñasObtenidas = reseñaBO.obtenerReseñasDeUsuario("user");
+        System.out.println(reseñasObtenidas);
+        //assert
+        assertNotNull(reseñasObtenidas, "La lista de reseñas no debe ser null");
+    }
 }
