@@ -24,6 +24,7 @@ import Dominio.RentaPorTarjeta;
 import Dominio.Reseña;
 import Dominio.Ticket;
 import Dominio.Usuario;
+import Negocio.DTOaEntidadBO;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -248,13 +249,19 @@ public class DTOaEntidadBOTest {
     @Test
     public void testConvertitRentaOxxoDTO() {
         System.out.println("convertitRentaOxxoDTO");
-        RentaPorOxxoDTO rentaPorOxxoDTO = null;
+
+//Arrenge
+        String codigoBarrasOxxo = "123456789";
+        RentaPorOxxoDTO rentaPorOxxoDTO = new RentaPorOxxoDTO(codigoBarrasOxxo);
+//act
         DTOaEntidadBO instance = new DTOaEntidadBO();
-        RentaPorOxxo expResult = null;
+
         RentaPorOxxo result = instance.convertitRentaOxxoDTO(rentaPorOxxoDTO);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        RentaPorOxxo expResult = new RentaPorOxxo();
+        expResult.setCodigoBarrasOxxo(codigoBarrasOxxo);
+
+        // assert
+        assertEquals(expResult.getCodigoBarrasOxxo(), result.getCodigoBarrasOxxo(), "Los códigos de barras deberían ser iguales.");
     }
 
     /**
