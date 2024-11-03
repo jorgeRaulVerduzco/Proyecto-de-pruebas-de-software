@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Negocio.RentaBOTest" time="0.565" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Negocio.RentaBOTest" time="0.487" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="MX"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\INEGI\AppData\Local\Temp\surefire17666115035150445148\surefirebooter-20241103032638052_3.jar C:\Users\INEGI\AppData\Local\Temp\surefire17666115035150445148 2024-11-03T03-26-37_847-jvmRun1 surefire-20241103032638052_1tmp surefire_0-20241103032638052_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\INEGI\AppData\Local\Temp\surefire13830924052810298635\surefirebooter-20241103033204458_3.jar C:\Users\INEGI\AppData\Local\Temp\surefire13830924052810298635 2024-11-03T03-32-04_246-jvmRun1 surefire-20241103033204458_1tmp surefire_0-20241103033204458_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="Negocio.RentaBOTest"/>
+    <property name="test" value="Negocio.RentaBOTest#testCalculoCostoRenta"/>
     <property name="surefire.test.class.path" value="C:\Users\INEGI\Downloads\Proyecto de pruebas de software\ProyectoDisenioGibran-main\ProyectoDisenioGibran-main\NegocioLibraryAccess\target\test-classes;C:\Users\INEGI\Downloads\Proyecto de pruebas de software\ProyectoDisenioGibran-main\ProyectoDisenioGibran-main\NegocioLibraryAccess\target\classes;C:\Users\INEGI\.m2\repository\com\mycompany\LibraryAccessDTO\1.0-SNAPSHOT\LibraryAccessDTO-1.0-SNAPSHOT.jar;C:\Users\INEGI\.m2\repository\org\mongodb\mongodb-driver-sync\4.5.0\mongodb-driver-sync-4.5.0.jar;C:\Users\INEGI\.m2\repository\org\mongodb\bson\4.5.0\bson-4.5.0.jar;C:\Users\INEGI\.m2\repository\org\mongodb\mongodb-driver-core\4.5.0\mongodb-driver-core-4.5.0.jar;C:\Users\INEGI\.m2\repository\com\mycompany\PersistenciaLibraryAccess\1.0-SNAPSHOT\PersistenciaLibraryAccess-1.0-SNAPSHOT.jar;C:\Users\INEGI\.m2\repository\org\mockito\mockito-core\5.4.0\mockito-core-5.4.0.jar;C:\Users\INEGI\.m2\repository\net\bytebuddy\byte-buddy\1.14.5\byte-buddy-1.14.5.jar;C:\Users\INEGI\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.5\byte-buddy-agent-1.14.5.jar;C:\Users\INEGI\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\INEGI\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\INEGI\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\INEGI\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\INEGI\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\INEGI\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\INEGI\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\INEGI\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\INEGI"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\INEGI\AppData\Local\Temp\surefire17666115035150445148\surefirebooter-20241103032638052_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\INEGI\AppData\Local\Temp\surefire13830924052810298635\surefirebooter-20241103033204458_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.1+8-16"/>
@@ -60,16 +60,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testRentarProducto" classname="Negocio.RentaBOTest" time="0.435">
-    <system-err><![CDATA[nov 03, 2024 3:26:39 A.M. org.bson.diagnostics.Loggers shouldUseSLF4J
+  <testcase name="testCalculoCostoRenta" classname="Negocio.RentaBOTest" time="0.445">
+    <system-out><![CDATA[200.0
+]]></system-out>
+    <system-err><![CDATA[nov 03, 2024 3:32:05 A.M. org.bson.diagnostics.Loggers shouldUseSLF4J
 WARNING: SLF4J not found on the classpath. Logging is disabled for the 'org.bson' component
-nov 03, 2024 3:26:39 A.M. com.mongodb.diagnostics.logging.Loggers shouldUseSLF4J
+nov 03, 2024 3:32:05 A.M. com.mongodb.diagnostics.logging.Loggers shouldUseSLF4J
 WARNING: SLF4J not found on the classpath.  Logging is disabled for the 'org.mongodb.driver' component
 ]]></system-err>
   </testcase>
-  <testcase name="testRentarProductoPorOxxo" classname="Negocio.RentaBOTest" time="0.008"/>
-  <testcase name="testConsultarHistorialRentasPorUsuario" classname="Negocio.RentaBOTest" time="0.047"/>
-  <testcase name="testConsultarHistorialRentasPorUsuarioMeses" classname="Negocio.RentaBOTest" time="0.008"/>
-  <testcase name="testRentarProductoPorTarjeta" classname="Negocio.RentaBOTest" time="0.007"/>
-  <testcase name="testConsultarProductosRentadosPorUsuario" classname="Negocio.RentaBOTest" time="0.009"/>
 </testsuite>

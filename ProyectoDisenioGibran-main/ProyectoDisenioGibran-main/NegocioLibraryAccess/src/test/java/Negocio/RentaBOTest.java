@@ -120,15 +120,25 @@ public class RentaBOTest {
 
     @Test
     public void testConsultarHistorialRentasPorUsuarioMeses() {
+        //arrenge
         String nombreUsuario = "usuario_test";
         int anho = 2024;
         int mes = 1;
-
+//Act
         List<Object> historial = rentaBO.consultarHistorialRentasPorUsuarioMeses(nombreUsuario, anho, mes);
 
-        // Verificar que la lista no sea null
-        assertNotNull( historial);
+        // assert
+        assertNotNull(historial);
     }
 
-    
+    @Test
+    public void testCalculoCostoRenta() {
+        // arrenge
+        rentaDTO.setCostoRenta(200);
+        // act
+        rentaBO.rentarProducto(rentaDTO);
+        // assert
+        assertEquals(200.0, rentaDTO.getCostoRenta(), 0.01);
+    }
+
 }
