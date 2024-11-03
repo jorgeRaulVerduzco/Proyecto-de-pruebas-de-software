@@ -4,4 +4,5 @@ Negocio\PagoProvicionalTest.class
 Negocio\PagoBOTest.class
 Negocio\RentaBOTest.class
 Negocio\ProductoSeleccionadoTest.class
+Negocio\RentaProvicionalTest.class
 Negocio\DTOaEntidadBOTest.class
