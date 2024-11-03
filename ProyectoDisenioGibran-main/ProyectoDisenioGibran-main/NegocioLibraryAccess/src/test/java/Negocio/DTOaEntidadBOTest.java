@@ -26,6 +26,7 @@ import Dominio.Ticket;
 import Dominio.Usuario;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -204,14 +205,41 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirRentaDTO() {
-        System.out.println("convertirRentaDTO");
-        RentaDTO rentaDTO = null;
+//arrenge
+        Date fechaExpiracion = new Date(System.currentTimeMillis());
+        RentaDTO rentaDTO = new RentaDTO();
+        rentaDTO.setCantidad(5);
+        rentaDTO.setCostoRenta(150.0);
+        rentaDTO.setFechaRenta(fechaExpiracion);
+        rentaDTO.setFechaDevolucion(fechaExpiracion);
+        UsuarioDTO usuarioDTO = new UsuarioDTO();
+        usuarioDTO.setNombreUsuario("Usuario1");
+        usuarioDTO.setContraseña("contraseña");
+        rentaDTO.setUsuarioDTO(Arrays.asList(usuarioDTO));
+        ProductoDTO productoDTO = new ProductoDTO();
+        productoDTO.setIsbn(123456);
+        productoDTO.setTitulo("Libro Ejemplo");
+        productoDTO.setAutor("Autor Ejemplo");
+        rentaDTO.setProductoDTO(Arrays.asList(productoDTO));
+
+        RentaPorOxxoDTO rentaPorOxxoDTO = new RentaPorOxxoDTO("123456789");
+        rentaDTO.setRentaPorOxxoDTO(Arrays.asList(rentaPorOxxoDTO));
+
+        RentaPorTarjetaDTO rentaPorTarjetaDTO = new RentaPorTarjetaDTO();
+        rentaPorTarjetaDTO.setTipoTarjeta("Visa");
+        rentaPorTarjetaDTO.setNumeroTarjeta("1234-5678-9012-3456");
+        rentaPorTarjetaDTO.setFechaExpiracion(fechaExpiracion);
+        rentaPorTarjetaDTO.setCodigoSeguridad("123");
+        rentaDTO.setRentaPorTarjetaDTO(Arrays.asList(rentaPorTarjetaDTO));
+
+//act
         DTOaEntidadBO instance = new DTOaEntidadBO();
-        Renta expResult = null;
         Renta result = instance.convertirRentaDTO(rentaDTO);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+//assert
+        assertNotNull(result);
+        assertEquals(rentaDTO.getCantidad(), result.getCantidad());
+        assertEquals(rentaDTO.getCostoRenta(), result.getCostoRenta());
     }
 
     /**
