@@ -70,7 +70,43 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirUsuarioDTO() {
-        System.out.println("ConvertirUsuarioDTO");
+ System.out.println("ConvertirUsuarioDTO");
+
+//arrenge
+        ProductoDTO productoDTO1 = new ProductoDTO(123, "Libro A", "Autor A", "Tipo A", "Editorial A", 19.99, "Categoria A", 5);
+        ProductoDTO productoDTO2 = new ProductoDTO(456, "Libro B", "Autor B", "Tipo B", "Editorial B", 29.99, "Categoria B", 3);
+
+        List<ProductoDTO> productosDTO = new ArrayList<>();
+        productosDTO.add(productoDTO1);
+        productosDTO.add(productoDTO2);
+
+        UsuarioDTO usuarioDTO = new UsuarioDTO("usuario1", "contrasena123");
+        usuarioDTO.setProductos(productosDTO);
+//act
+        DTOaEntidadBO instance = new DTOaEntidadBO();
+
+        Usuario result = instance.ConvertirUsuarioDTO(usuarioDTO);
+
+        Usuario expResult = new Usuario();
+        expResult.setNombreUsuario("usuario1");
+        expResult.setContraseña("contrasena123");
+
+        List<Producto> productosEsperados = new ArrayList<>();
+        for (ProductoDTO pDTO : productosDTO) {
+            Producto producto = new Producto(pDTO.getIsbn(), pDTO.getTitulo(), pDTO.getAutor(), pDTO.getTipo(), pDTO.getEditorial(), pDTO.getPrecio(), pDTO.getCategoria(), pDTO.getCantidad());
+            productosEsperados.add(producto);
+        }
+        expResult.setProductosVendidos(productosEsperados);
+
+//assert
+        assertEquals(expResult.getNombreUsuario(), result.getNombreUsuario());
+        assertEquals(expResult.getContraseña(), result.getContraseña());
+        assertEquals(expResult.getProductosVendidos().size(), result.getProductosVendidos().size());
+
+        for (int i = 0; i < expResult.getProductosVendidos().size(); i++) {
+            assertEquals(expResult.getProductosVendidos().get(i).getIsbn(), result.getProductosVendidos().get(i).getIsbn());
+            assertEquals(expResult.getProductosVendidos().get(i).getTitulo(), result.getProductosVendidos().get(i).getTitulo());
+        }
     }
 
     /**
