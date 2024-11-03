@@ -1,5 +1,6 @@
 Negocio\PagoBOTest.class
 Negocio\UsuarioBOTest.class
+Negocio\ProductoSeleccionadoTest.class
 Negocio\ProductoBOTest.class
 Negocio\DTOaEntidadBOTest.class
 Negocio\PagoProvicionalTest.class
