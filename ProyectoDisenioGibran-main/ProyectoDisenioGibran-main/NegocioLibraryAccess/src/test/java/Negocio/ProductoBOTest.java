@@ -138,4 +138,17 @@ public class ProductoBOTest {
         assertEquals(producto.getAutor(), resultado.getAutor());
     }
 
+    @Test
+    public void testBuscarProductosPorVendedor() {
+        // Arrange
+        productoBO.agregarProducto(productoDTO);
+
+        // Act
+        List<ProductoDTO> productos = productoBO.buscarProductosPorVendedor("VendedorTest");
+
+        // Assert
+        assertNotNull(productos);
+    }
+
+    
 }
