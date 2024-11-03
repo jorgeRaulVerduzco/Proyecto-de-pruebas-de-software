@@ -117,7 +117,45 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirPagoDTO() {
+        // Arrange
+        Date fechaPago = new Date(System.currentTimeMillis());
+        PagoDTO pagoDTO = new PagoDTO();
+        pagoDTO.setCantidad(5);
+        pagoDTO.setCostoTotal(299.99);
+        pagoDTO.setFechaDePago(fechaPago);
+        UsuarioDTO usuarioDTO = new UsuarioDTO("usuario1", "password123");
+        List<ProductoDTO> productosUsuarioDTO = new ArrayList<>();
+        ProductoDTO productoUsuarioDTO = new ProductoDTO(12345, "Libro Test", "Autor Test",
+                "Tipo Test", "Editorial Test", 59.99, "Categoría Test", 10);
+        productosUsuarioDTO.add(productoUsuarioDTO);
+        usuarioDTO.setProductos(productosUsuarioDTO);
+        List<UsuarioDTO> usuariosDTO = new ArrayList<>();
+        usuariosDTO.add(usuarioDTO);
+        pagoDTO.setUsuarioDTO(usuariosDTO);
+        ProductoDTO productoDTO = new ProductoDTO(12345, "Libro Test", "Autor Test",
+                "Tipo Test", "Editorial Test", 59.99, "Categoría Test", 10);
+        List<ProductoDTO> productosDTO = new ArrayList<>();
+        productosDTO.add(productoDTO);
+        pagoDTO.setProductoDTO(productosDTO);
+        PagoPorOxxoDTO pagoPorOxxoDTO = new PagoPorOxxoDTO("123456789012");
+        List<PagoPorOxxoDTO> pagosOxxoDTO = new ArrayList<>();
+        pagosOxxoDTO.add(pagoPorOxxoDTO);
+        pagoDTO.setPagoPorOxxoDTO(pagosOxxoDTO);
+        PagoPorTarjetaDTO pagoPorTarjetaDTO = new PagoPorTarjetaDTO("Visa",
+                "4111111111111111", fechaPago, "123");
+        List<PagoPorTarjetaDTO> pagosTarjetaDTO = new ArrayList<>();
+        pagosTarjetaDTO.add(pagoPorTarjetaDTO);
+        pagoDTO.setPagoPorTarjetaDTO(pagosTarjetaDTO);
 
+        // Act
+        DTOaEntidadBO instance = new DTOaEntidadBO();
+        Pago result = instance.ConvertirPagoDTO(pagoDTO);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(pagoDTO.getCantidad(), result.getCantidad());
+        assertEquals(pagoDTO.getCostoTotal(), result.getCostoTotal(), 0.01);
+        assertEquals(pagoDTO.getFechaDePago(), result.getFechaDePago());
     }
 
     /**
