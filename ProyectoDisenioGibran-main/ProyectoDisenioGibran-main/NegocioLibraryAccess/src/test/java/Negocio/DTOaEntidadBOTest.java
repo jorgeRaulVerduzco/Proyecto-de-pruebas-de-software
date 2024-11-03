@@ -24,6 +24,7 @@ import Dominio.RentaPorTarjeta;
 import Dominio.Reseña;
 import Dominio.Ticket;
 import Dominio.Usuario;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -145,14 +146,25 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirPagoPorTarjetaDTO() {
-        System.out.println("convertirPagoPorTarjetaDTO");
-        PagoPorTarjetaDTO pagoPorTarjetaDTO = null;
-        DTOaEntidadBO instance = new DTOaEntidadBO();
-        PagoPorTarjeta expResult = null;
-        PagoPorTarjeta result = instance.convertirPagoPorTarjetaDTO(pagoPorTarjetaDTO);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      System.out.println("convertirPagoPorTarjetaDTO");
+
+    // arrenge
+    String tipoTarjeta = "Visa";
+    String numeroTarjeta = "4111111111111111";
+    Date fechaExpiracion = new Date(System.currentTimeMillis()); 
+    String codigoSeguridad = "123";
+    PagoPorTarjetaDTO pagoPorTarjetaDTO = new PagoPorTarjetaDTO(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
+    DTOaEntidadBO instance = new DTOaEntidadBO();
+    
+    // Act
+    PagoPorTarjeta expResult = new PagoPorTarjeta(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
+    PagoPorTarjeta result = instance.convertirPagoPorTarjetaDTO(pagoPorTarjetaDTO);
+    
+    //Assert
+    assertEquals(expResult.getTipoTarjeta(), result.getTipoTarjeta());
+    assertEquals(expResult.getNumeroTarjeta(), result.getNumeroTarjeta());
+    assertEquals(expResult.getFechaExpiracion(), result.getFechaExpiracion());
+    assertEquals(expResult.getCodigoSeguridad(), result.getCodigoSeguridad());
     }
 
     /**
