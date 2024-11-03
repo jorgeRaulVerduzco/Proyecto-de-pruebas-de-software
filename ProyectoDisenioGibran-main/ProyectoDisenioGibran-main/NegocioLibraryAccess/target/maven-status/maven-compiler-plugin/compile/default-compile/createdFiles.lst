@@ -1,0 +1,16 @@
+Negocio\UsuarioBO.class
+INegocio\IReseñaBO.class
+Negocio\ReseñaBO.class
+Negocio\PagoBO.class
+Negocio\RentaProvicional.class
+INegocio\IUsuarioBO.class
+Negocio\RentaBO.class
+Negocio\UsuarioSesion.class
+Negocio\ProductoBO.class
+Negocio\ProductoSeleccionado.class
+INegocio\iDTOaEntidadbo.class
+Negocio\PagoProvicional.class
+Negocio\DTOaEntidadBO.class
+INegocio\IPagoBO.class
+INegocio\IProductoBO.class
+INegocio\IRentaBO.class
