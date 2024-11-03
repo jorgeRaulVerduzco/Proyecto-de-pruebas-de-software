@@ -108,5 +108,16 @@ public class RentaBOTest {
         assertNotNull(productos);
     }
 
+    @Test
+    public void testConsultarHistorialRentasPorUsuario() {
+        //arrenge
+        String nombreUsuario = "usuario_test";
+        //Act
+        List<Object> historial = rentaBO.consultarHistorialRentasPorUsuario(nombreUsuario);
+        //assert
+        assertNotNull(historial);
+    }
+
+
     
 }
