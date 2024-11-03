@@ -70,7 +70,7 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirUsuarioDTO() {
- System.out.println("ConvertirUsuarioDTO");
+        System.out.println("ConvertirUsuarioDTO");
 
 //arrenge
         ProductoDTO productoDTO1 = new ProductoDTO(123, "Libro A", "Autor A", "Tipo A", "Editorial A", 19.99, "Categoria A", 5);
@@ -122,6 +122,21 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConnvertirPagoOxxoDTO() {
+        System.out.println("ConnvertirPagoOxxoDTO");
+
+//arrenge
+        String codigoBarrasOxxo = "123456789012";
+        PagoPorOxxoDTO pagoOxxoDTO = new PagoPorOxxoDTO(codigoBarrasOxxo);
+
+        DTOaEntidadBO instance = new DTOaEntidadBO();
+
+        // Act
+        PagoPorOxxo expResult = new PagoPorOxxo();
+        expResult.setCodigoBarrasOxxo(codigoBarrasOxxo);
+        PagoPorOxxo result = instance.ConnvertirPagoOxxoDTO(pagoOxxoDTO);
+
+//assert
+        assertEquals(expResult.getCodigoBarrasOxxo(), result.getCodigoBarrasOxxo());
 
     }
 
