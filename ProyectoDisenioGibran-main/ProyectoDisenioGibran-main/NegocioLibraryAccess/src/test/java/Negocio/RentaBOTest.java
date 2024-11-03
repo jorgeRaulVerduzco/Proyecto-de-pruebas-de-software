@@ -118,6 +118,17 @@ public class RentaBOTest {
         assertNotNull(historial);
     }
 
+    @Test
+    public void testConsultarHistorialRentasPorUsuarioMeses() {
+        String nombreUsuario = "usuario_test";
+        int anho = 2024;
+        int mes = 1;
+
+        List<Object> historial = rentaBO.consultarHistorialRentasPorUsuarioMeses(nombreUsuario, anho, mes);
+
+        // Verificar que la lista no sea null
+        assertNotNull( historial);
+    }
 
     
 }
