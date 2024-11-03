@@ -91,5 +91,29 @@ public class ProductoBOTest {
         assertEquals(123456, productos.get(0).getIsbn());
     }
 
- 
+    @Test
+    public void testListaProductos() {
+        // Arrange
+        productoBO.agregarProducto(productoDTO);
+        ProductoDTO otroProducto = new ProductoDTO(
+                789012,
+                "1984",
+                "George Orwell",
+                "Libro",
+                "Editorial Test",
+                399.99,
+                "Ficción",
+                5
+        );
+        productoBO.agregarProducto(otroProducto);
+
+        // Act
+        List<ProductoDTO> productos = productoBO.listaProductos();
+
+        // Assert
+        assertNotNull(productos);
+        assertTrue(productos.size() >= 2);
+    }
+
+   
 }
