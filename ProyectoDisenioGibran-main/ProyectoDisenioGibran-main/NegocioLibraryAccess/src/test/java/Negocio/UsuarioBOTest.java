@@ -112,4 +112,18 @@ public class UsuarioBOTest {
         assertEquals(productoVendido.getTitulo(), result.get(0).getTitulo());
     }
 
+    @Test
+    public void testConvertirAProductoDTO() {
+        //arrenge
+        System.out.println("convertirAProductoDTO");
+        Producto producto = new Producto(123456, "Test Product", "Test Author", "Book", "Test Editorial", 19.99, "Test Category", 5);
+        ProductoDTO expResult = new ProductoDTO(123456, "Test Product", "Test Author", "Book", "Test Editorial", 19.99, "Test Category", 5);
+//act
+        ProductoDTO result = usuarioBO.convertirAProductoDTO(producto);
+        //assert
+        assertEquals(expResult.getTitulo(), result.getTitulo());
+        assertEquals(expResult.getAutor(), result.getAutor());
+        assertEquals(expResult.getPrecio(), result.getPrecio(), 0.001);
+    }
+
 }
