@@ -128,5 +128,15 @@ public class PagoBOTest {
         assertNotNull(productos);
     }
 
- 
+    @Test
+    public void testConsultarHistorialComprasPorUsuario() throws PersistenciaException {
+        // Act
+        List<Object> historial = pagoBO.consultarHistorialComprasPorUsuario("testUser");
+
+        // Assert
+        assertNotNull(historial);
+    }
+
+  
+
 }
