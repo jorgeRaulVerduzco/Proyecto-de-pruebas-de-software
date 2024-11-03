@@ -146,40 +146,25 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirPagoPorTarjetaDTO() {
-      System.out.println("convertirPagoPorTarjetaDTO");
+        System.out.println("convertirPagoPorTarjetaDTO");
 
-    // arrenge
-    String tipoTarjeta = "Visa";
-    String numeroTarjeta = "4111111111111111";
-    Date fechaExpiracion = new Date(System.currentTimeMillis()); 
-    String codigoSeguridad = "123";
-    PagoPorTarjetaDTO pagoPorTarjetaDTO = new PagoPorTarjetaDTO(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
-    DTOaEntidadBO instance = new DTOaEntidadBO();
-    
-    // Act
-    PagoPorTarjeta expResult = new PagoPorTarjeta(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
-    PagoPorTarjeta result = instance.convertirPagoPorTarjetaDTO(pagoPorTarjetaDTO);
-    
-    //Assert
-    assertEquals(expResult.getTipoTarjeta(), result.getTipoTarjeta());
-    assertEquals(expResult.getNumeroTarjeta(), result.getNumeroTarjeta());
-    assertEquals(expResult.getFechaExpiracion(), result.getFechaExpiracion());
-    assertEquals(expResult.getCodigoSeguridad(), result.getCodigoSeguridad());
-    }
-
-    /**
-     * Test of convertirTicketDTO method, of class DTOaEntidadBO.
-     */
-    @Test
-    public void testConvertirTicketDTO() {
-        System.out.println("convertirTicketDTO");
-        TicketDTO ticketDTO = null;
+        // arrenge
+        String tipoTarjeta = "Visa";
+        String numeroTarjeta = "4111111111111111";
+        Date fechaExpiracion = new Date(System.currentTimeMillis());
+        String codigoSeguridad = "123";
+        PagoPorTarjetaDTO pagoPorTarjetaDTO = new PagoPorTarjetaDTO(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
         DTOaEntidadBO instance = new DTOaEntidadBO();
-        Ticket expResult = null;
-        Ticket result = instance.convertirTicketDTO(ticketDTO);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        // Act
+        PagoPorTarjeta expResult = new PagoPorTarjeta(tipoTarjeta, numeroTarjeta, fechaExpiracion, codigoSeguridad);
+        PagoPorTarjeta result = instance.convertirPagoPorTarjetaDTO(pagoPorTarjetaDTO);
+
+        //Assert
+        assertEquals(expResult.getTipoTarjeta(), result.getTipoTarjeta());
+        assertEquals(expResult.getNumeroTarjeta(), result.getNumeroTarjeta());
+        assertEquals(expResult.getFechaExpiracion(), result.getFechaExpiracion());
+        assertEquals(expResult.getCodigoSeguridad(), result.getCodigoSeguridad());
     }
 
     /**
@@ -187,14 +172,31 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirReseñaDTO() {
-        System.out.println("convertirRese\u00f1aDTO");
-        ReseñaDTO reseñaDTO = null;
+        // Arrenge
+        ProductoDTO productoDTO = new ProductoDTO(123, "Título del Producto", "Autor del Producto", "Tipo", "Editorial", 29.99, "Categoría", 5);
+        UsuarioDTO usuarioDTO = new UsuarioDTO("nombreUsuario", "contraseña");
+        usuarioDTO.setProductos(new ArrayList<>());
+        ReseñaDTO reseñaDTO = new ReseñaDTO();
+        reseñaDTO.setReseña("Esta es una reseña de prueba.");
+        reseñaDTO.setRating(5);
+        reseñaDTO.setProducto(productoDTO);
+        reseñaDTO.setUsuario(usuarioDTO);
+
         DTOaEntidadBO instance = new DTOaEntidadBO();
-        Reseña expResult = null;
+
+        // Act
+        Reseña expResult = new Reseña();
+        expResult.setReseña(reseñaDTO.getReseña());
+        expResult.setRating(reseñaDTO.getRating());
+        expResult.setProducto(instance.ConvertirProductoDTO(reseñaDTO.getProducto()));
+        expResult.setUsuario(instance.ConvertirUsuarioDTO(reseñaDTO.getUsuario()));
         Reseña result = instance.convertirReseñaDTO(reseñaDTO);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        // Assert
+        assertEquals(expResult.getReseña(), result.getReseña());
+        assertEquals(expResult.getRating(), result.getRating());
+        assertEquals(expResult.getProducto(), result.getProducto());
+        assertEquals(expResult.getUsuario(), result.getUsuario());
     }
 
     /**
