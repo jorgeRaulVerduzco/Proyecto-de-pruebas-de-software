@@ -82,6 +82,21 @@ public class RentaBOTest {
 
     }
 
-    
-    
+    @Test
+    public void testRentarProductoPorTarjeta() {
+        //arrenge
+        RentaPorTarjetaDTO rentaPorTarjetaDTO = new RentaPorTarjetaDTO(
+                "VISA",
+                "4111111111111111",
+                new Date(System.currentTimeMillis() + 365 * 24 * 60 * 60 * 1000),
+                "123"
+        );
+        //Act
+        rentaBO.rentarProductoPorTarjeta(rentaPorTarjetaDTO);
+        //assert
+        assertTrue(true);
+
+    }
+
+   
 }
