@@ -119,5 +119,14 @@ public class PagoBOTest {
         assertEquals(16, pagoPorTarjetaDTO.getNumeroTarjeta().length());
     }
 
+    @Test
+    public void testConsultarProductosCompradosPorUsuario() throws PersistenciaException {
+        // Act
+        List<ProductoDTO> productos = pagoBO.consultarProductosCompradosPorUsuario("testUser");
+
+        // Assert
+        assertNotNull(productos);
+    }
+
  
 }
