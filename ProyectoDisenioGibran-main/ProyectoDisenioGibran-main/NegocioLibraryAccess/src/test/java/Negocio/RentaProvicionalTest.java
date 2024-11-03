@@ -42,5 +42,24 @@ public class RentaProvicionalTest {
         assertEquals(500.0, resultAfterSet.getCostoRenta(), "El costo de la renta debería ser 500.0.");
     }
 
-  
+    @Test
+    public void testSetRentaProvicional() {
+        System.out.println("setRentaProvicional");
+//Arrenge
+        RentaDTO rentaProvicional = new RentaDTO();
+        rentaProvicional.setId(new ObjectId());
+        rentaProvicional.setFechaRenta(new Date(System.currentTimeMillis()));
+        rentaProvicional.setFechaDevolucion(new Date(System.currentTimeMillis()));
+        rentaProvicional.setCantidad(5);
+        rentaProvicional.setCostoRenta(1000.0);
+        //act
+        RentaProvicional.setRentaProvicional(rentaProvicional);
+        RentaDTO result = RentaProvicional.getRentaProvicional();
+        //Assert
+        assertNotNull(result, "La renta provisional no debería ser null.");
+        assertEquals(rentaProvicional.getId(), result.getId(), "El id de la renta provisional debería coincidir.");
+        assertEquals(rentaProvicional.getFechaRenta(), result.getFechaRenta(), "La fecha de renta debería coincidir.");
+        assertEquals(rentaProvicional.getFechaDevolucion(), result.getFechaDevolucion(), "La fecha de devolución debería coincidir.");
+    }
+
 }
