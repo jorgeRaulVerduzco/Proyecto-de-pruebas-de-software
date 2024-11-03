@@ -43,7 +43,26 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirProductoDTO() {
-      
+        System.out.println("ConvertirProductoDTO");
+//Arrenge
+        ProductoDTO productoDTO = new ProductoDTO(123456, "Título de Prueba", "Autor de Prueba", "Tipo de Prueba",
+                "Editorial de Prueba", 19.99, "Categoría de Prueba", 10);
+        DTOaEntidadBO instance = new DTOaEntidadBO();
+//act
+        Producto expResult = new Producto(123456, "Título de Prueba", "Autor de Prueba", "Tipo de Prueba",
+                "Editorial de Prueba", 19.99, "Categoría de Prueba", 10);
+        Producto result = instance.ConvertirProductoDTO(productoDTO);
+
+//asssert
+        assertEquals(expResult.getIsbn(), result.getIsbn());
+        assertEquals(expResult.getTitulo(), result.getTitulo());
+        assertEquals(expResult.getAutor(), result.getAutor());
+        assertEquals(expResult.getTipo(), result.getTipo());
+        assertEquals(expResult.getEditorial(), result.getEditorial());
+        assertEquals(expResult.getPrecio(), result.getPrecio(), 0.01);
+        assertEquals(expResult.getCategoria(), result.getCategoria());
+        assertEquals(expResult.getCantidad(), result.getCantidad());
+
     }
 
     /**
@@ -67,7 +86,7 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConnvertirPagoOxxoDTO() {
-     
+
     }
 
     /**
