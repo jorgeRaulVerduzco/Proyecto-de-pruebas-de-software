@@ -164,5 +164,18 @@ public class ProductoBOTest {
         assertEquals("Antoine de Saint-Exupéry", productos.get(0).getAutor());
     }
 
-  
+    @Test
+    public void testBuscarProductosPorCategoria() {
+        // Arrange
+        productoBO.agregarProducto(productoDTO);
+
+        // Act
+        List<ProductoDTO> productos = productoBO.buscarProductosPorCategoria("Ficción");
+
+        // Assert
+        assertNotNull(productos);
+        assertFalse(productos.isEmpty());
+        assertEquals(
+                "Ficción", productos.get(0).getCategoria());
+    }
 }
