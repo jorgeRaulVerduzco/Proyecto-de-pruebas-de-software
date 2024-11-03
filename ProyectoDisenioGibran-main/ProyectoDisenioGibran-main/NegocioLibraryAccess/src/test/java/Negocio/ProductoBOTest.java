@@ -150,5 +150,19 @@ public class ProductoBOTest {
         assertNotNull(productos);
     }
 
-    
+    @Test
+    public void testBuscarProductosPorAutor() {
+        // Arrange
+        productoBO.agregarProducto(productoDTO);
+
+        // Act
+        List<ProductoDTO> productos = productoBO.buscarProductosPorAutor("Antoine de Saint-Exupéry");
+
+        // Assert
+        assertNotNull(productos);
+        assertFalse(productos.isEmpty());
+        assertEquals("Antoine de Saint-Exupéry", productos.get(0).getAutor());
+    }
+
+  
 }
