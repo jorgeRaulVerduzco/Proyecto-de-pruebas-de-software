@@ -98,5 +98,15 @@ public class RentaBOTest {
 
     }
 
-   
+    @Test
+    public void testConsultarProductosRentadosPorUsuario() {
+        //arrenge
+        String nombreUsuario = "usuario_test";
+        //act
+        List<ProductoDTO> productos = rentaBO.consultarPorductosRentadosPorUsuario(nombreUsuario);
+        //assert
+        assertNotNull(productos);
+    }
+
+    
 }
