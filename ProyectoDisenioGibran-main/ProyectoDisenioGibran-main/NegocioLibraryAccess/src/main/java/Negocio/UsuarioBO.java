@@ -34,6 +34,11 @@ public class UsuarioBO implements IUsuarioBO {
         dtoaEntidadBO = new DTOaEntidadBO();
 
     }
+      public UsuarioBO(IUsuarioDAO usuarioDAO, DTOaEntidadBO dtoaEntidadBO) {
+        this.usuarioDAO = usuarioDAO;
+        this.dtoaEntidadBO = dtoaEntidadBO;
+        this.productoDao = new ProductoDAO(); // O recibir también como parámetro si es necesario
+    }
 
     @Override
     public void agregarUsuario(UsuarioDTO usuarioDTO) {
