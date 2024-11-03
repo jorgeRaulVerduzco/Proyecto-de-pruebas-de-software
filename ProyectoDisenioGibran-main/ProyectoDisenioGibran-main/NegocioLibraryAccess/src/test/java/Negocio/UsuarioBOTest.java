@@ -39,5 +39,23 @@ public class UsuarioBOTest {
         assertTrue(usuarioBO.buscarUsuario("testUser", "testPassword"));
     }
 
+    @Test
+    public void testBuscarUsuario() {
+        System.out.println("buscarUsuario");
+        
+        //arrenge
+        String nombreUsuario = "testUser";
+        String contraseña = "testPassword";
+        UsuarioDTO usuarioDTO = new UsuarioDTO(nombreUsuario, contraseña);
+        usuarioDTO.setProductos(new ArrayList<>());
+        usuarioBO.agregarUsuario(usuarioDTO);
+
+        //act
+        boolean expResult = true;
+        boolean result = usuarioBO.buscarUsuario(nombreUsuario, contraseña);
+        System.out.println(result);
+        //Assert
+        assertEquals(expResult, result);
+    }
 
 }
