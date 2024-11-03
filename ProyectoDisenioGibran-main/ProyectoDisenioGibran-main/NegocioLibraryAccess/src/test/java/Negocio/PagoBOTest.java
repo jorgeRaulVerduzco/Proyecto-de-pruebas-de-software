@@ -94,5 +94,16 @@ public class PagoBOTest {
 
     }
 
-    
+    @Test
+    public void testComprarProductoPorOxxo() throws PersistenciaException {
+
+        // Act
+        pagoBO.ComprarProductoPorOxxo(pagoPorOxxoDTO);
+
+        // Assert
+        assertNotNull(pagoPorOxxoDTO.getCodigoBarrasOxxo());
+        assertEquals(9, pagoPorOxxoDTO.getCodigoBarrasOxxo().length());
+    }
+
+   
 }
