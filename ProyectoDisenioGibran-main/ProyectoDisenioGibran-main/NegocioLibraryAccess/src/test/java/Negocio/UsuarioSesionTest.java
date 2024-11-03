@@ -40,4 +40,17 @@ public class UsuarioSesionTest {
         assertEquals(usuarioPrueba.getContraseña(), result.getContraseña(), "La contraseña del usuario en sesion deberia ser la misma que la del usuario seleccionado.");
     }
 
+    /**
+     * Test de setUsuarioSeleccionado method, de class UsuarioSesion.
+     */
+    @Test
+    public void testSetUsuarioSeleccionado() {
+        System.out.println("setUsuarioSeleccionado");
+//act
+        UsuarioSesion.setUsuarioSeleccionado(usuarioPrueba);
+        UsuarioDTO result = UsuarioSesion.usuarioSesion();
+        //Assert
+        assertNotNull(result, "El usuario en sesión no debe ser null después de establecerlo.");
+        assertEquals(usuarioPrueba.getNombreUsuario(), result.getNombreUsuario(), "El usuario en sesión debería ser el mismo que el seleccionado.");
+    }
 }
