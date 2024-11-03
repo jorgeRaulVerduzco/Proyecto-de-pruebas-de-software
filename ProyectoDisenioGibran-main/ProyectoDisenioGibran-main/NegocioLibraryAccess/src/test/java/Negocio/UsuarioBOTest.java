@@ -92,4 +92,24 @@ public class UsuarioBOTest {
         assertEquals(productoVendido.getTitulo().toLowerCase(), productosVendidos.get(0).getTitulo().toLowerCase());
     }
 
+    @Test
+    public void testObtenerHistorialProductosVendidos() {
+        //arrenge
+        System.out.println("obtenerHistorialProductosVendidos");
+        String nombreUsuario = "testUser";
+        String contraseña = "testPassword";
+        UsuarioDTO usuarioDTO = new UsuarioDTO(nombreUsuario, contraseña);
+        usuarioDTO.setProductos(new ArrayList<>());
+        //act
+        usuarioBO.agregarUsuario(usuarioDTO);
+        ProductoDTO productoVendido = new ProductoDTO(123456, "testProduct", "TestAuthor", "Book", "TestEditorial", 19.99, "TestCategory", 5);
+        usuarioBO.agregarProductoVendido(nombreUsuario, productoVendido);
+
+        List<ProductoDTO> result = usuarioBO.obtenerHistorialProductosVendidos(nombreUsuario);
+        //assert
+        assertNotNull(result);
+        assertFalse(result.isEmpty());
+        assertEquals(productoVendido.getTitulo(), result.get(0).getTitulo());
+    }
+
 }
