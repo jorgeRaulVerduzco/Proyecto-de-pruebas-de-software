@@ -7,3 +7,4 @@ Negocio\RentaBOTest.class
 Negocio\ProductoSeleccionadoTest.class
 Negocio\RentaProvicionalTest.class
 Negocio\DTOaEntidadBOTest.class
+Negocio\UsuarioSesionTest.class
