@@ -1,0 +1,55 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ */
+package Negocio;
+
+import DTO.ProductoDTO;
+import DTO.ReseñaDTO;
+import DTO.UsuarioDTO;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+
+/**
+ *
+ * @author INEGI
+ */
+public class ReseñaBOTest {
+
+    private ReseñaBO reseñaBO;
+    private ReseñaDTO reseñaDTO;
+    private int isbn;
+    private String nombreUsuario;
+
+    @BeforeEach
+    public void setUp() {
+        reseñaBO = new ReseñaBO();
+        reseñaDTO = new ReseñaDTO();
+        reseñaDTO.setReseña("Excelente producto");
+        reseñaDTO.setRating(5);
+        // Se puede setear el producto y usuario según sea necesario
+        ProductoDTO productoDTO = new ProductoDTO();
+        productoDTO.setIsbn(12345);
+        productoDTO.setTitulo("Test Book");
+        productoDTO.setAutor("Test Author");
+        productoDTO.setPrecio(299.99);
+        productoDTO.setCantidad(1);
+        reseñaDTO.setProducto(productoDTO);
+        UsuarioDTO usuarioDTO = new UsuarioDTO();
+        usuarioDTO.setNombreUsuario("user");
+        usuarioDTO.setContraseña("password");
+        reseñaDTO.setUsuario(usuarioDTO);
+        isbn = 1234567890;
+        nombreUsuario = "usuarioEjemplo";
+    }
+
+    @Test
+    public void testGenerarReseña() {
+        System.out.println("Prueba de generarReseña");
+        assertDoesNotThrow(() -> reseñaBO.generarReseña(reseñaDTO));
+    }
+
+}
