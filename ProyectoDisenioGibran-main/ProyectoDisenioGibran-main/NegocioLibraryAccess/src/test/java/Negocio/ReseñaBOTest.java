@@ -21,8 +21,7 @@ public class ReseñaBOTest {
 
     private ReseñaBO reseñaBO;
     private ReseñaDTO reseñaDTO;
-    private int isbn;
-    private String nombreUsuario;
+
 
     @BeforeEach
     public void setUp() {
@@ -42,14 +41,26 @@ public class ReseñaBOTest {
         usuarioDTO.setNombreUsuario("user");
         usuarioDTO.setContraseña("password");
         reseñaDTO.setUsuario(usuarioDTO);
-        isbn = 1234567890;
-        nombreUsuario = "usuarioEjemplo";
+     
     }
 
     @Test
     public void testGenerarReseña() {
         System.out.println("Prueba de generarReseña");
-        assertDoesNotThrow(() -> reseñaBO.generarReseña(reseñaDTO));
+        //act
+        reseñaBO.generarReseña(reseñaDTO);
+        //Assert
+        assertEquals("user", reseñaDTO.getUsuario().getNombreUsuario());
+
+    }
+
+    @Test
+    public void testObtenerReseñasDeProducto() {
+        System.out.println("Prueba de obtenerReseñasDeProducto");
+        //Act
+        List<Object> reseñasObtenidas = reseñaBO.obtenerReseñasDeProducto(12345);
+        //assert
+        assertNotNull(reseñasObtenidas, "La lista de reseñas no debe ser null");
     }
 
 }
