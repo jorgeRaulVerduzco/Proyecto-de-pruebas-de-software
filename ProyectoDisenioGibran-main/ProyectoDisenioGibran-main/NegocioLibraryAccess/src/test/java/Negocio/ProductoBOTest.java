@@ -77,5 +77,19 @@ public class ProductoBOTest {
                 productos.get(0).getTitulo().contains("Principito"));
     }
 
-  
+    @Test
+    public void testBuscarProductosPorIsbn() {
+        // Arrange
+        productoBO.agregarProducto(productoDTO);
+
+        // Act
+        List<ProductoDTO> productos = productoBO.buscarProductosPorIsbn(123456);
+
+        // Assert
+        assertNotNull(productos);
+        assertFalse(productos.isEmpty());
+        assertEquals(123456, productos.get(0).getIsbn());
+    }
+
+ 
 }
