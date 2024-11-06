@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Negocio.RentaProvicionalTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in Negocio.RentaProvicionalTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.159 s -- in Negocio.RentaProvicionalTest

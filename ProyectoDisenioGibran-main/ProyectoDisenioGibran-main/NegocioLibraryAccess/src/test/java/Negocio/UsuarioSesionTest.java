@@ -31,7 +31,6 @@ public class UsuarioSesionTest {
     @Test
     public void testUsuarioSesion() {
         System.out.println("usuarioSesion");
-
         //Act
         UsuarioSesion.setUsuarioSeleccionado(usuarioPrueba);
         UsuarioDTO result = UsuarioSesion.usuarioSesion();

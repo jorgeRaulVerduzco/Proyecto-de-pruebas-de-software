@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: DAO.RentaDAOTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s -- in DAO.RentaDAOTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.079 s -- in DAO.RentaDAOTest

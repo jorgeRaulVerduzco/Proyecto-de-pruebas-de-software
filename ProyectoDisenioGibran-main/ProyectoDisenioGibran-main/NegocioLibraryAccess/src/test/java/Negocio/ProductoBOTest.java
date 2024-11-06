@@ -51,11 +51,9 @@ public class ProductoBOTest {
                 "Ficción",
                 5
         );
-
         // Act
         productoBO.agregarProducto(nuevoProducto);
         List<ProductoDTO> productos = productoBO.buscarProductosPorIsbn(789012);
-
         // Assert
         assertNotNull( productos);
         assertFalse( productos.isEmpty());
@@ -66,10 +64,8 @@ public class ProductoBOTest {
     public void testBuscarProductosPorNombre() {
         // Arrange
         productoBO.agregarProducto(productoDTO);
-
         // Act
         List<ProductoDTO> productos = productoBO.buscarProductosPorNombre("Principito");
-
         // Assert
         assertNotNull(productos);
         assertFalse(productos.isEmpty());
@@ -154,10 +150,8 @@ public class ProductoBOTest {
     public void testBuscarProductosPorAutor() {
         // Arrange
         productoBO.agregarProducto(productoDTO);
-
         // Act
         List<ProductoDTO> productos = productoBO.buscarProductosPorAutor("Antoine de Saint-Exupéry");
-
         // Assert
         assertNotNull(productos);
         assertFalse(productos.isEmpty());
@@ -168,10 +162,8 @@ public class ProductoBOTest {
     public void testBuscarProductosPorCategoria() {
         // Arrange
         productoBO.agregarProducto(productoDTO);
-
         // Act
         List<ProductoDTO> productos = productoBO.buscarProductosPorCategoria("Ficción");
-
         // Assert
         assertNotNull(productos);
         assertFalse(productos.isEmpty());

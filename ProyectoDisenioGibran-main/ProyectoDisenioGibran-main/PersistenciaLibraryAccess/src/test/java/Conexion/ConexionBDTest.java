@@ -37,7 +37,6 @@ public class ConexionBDTest {
     public void testGetDatabase() {
         //Verifica que la conexion no es nula
         assertNotNull(database, "La base de datos deberia estar inicializada");
-        
         //Verifica que el nombre de la base de datos es correcto
         assertEquals("libraryAccess", database.getName(), 
                 "El nombre de la base de datos debe ser 'libraryAccess'");
@@ -50,7 +49,7 @@ public class ConexionBDTest {
     public void testClose() {
         //Llama a close() y verifica que la conexion se cierra
         ConexionBD.close();
-        
+       
         //Intenta volver a obtener la base de datos y asegurase de que la conexion es nueva
         MongoDatabase newDatabase = ConexionBD.getDatabase();
         assertNotSame(database, newDatabase, 

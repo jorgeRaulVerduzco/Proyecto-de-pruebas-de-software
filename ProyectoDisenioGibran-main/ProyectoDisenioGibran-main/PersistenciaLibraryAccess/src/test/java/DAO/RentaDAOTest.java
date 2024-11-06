@@ -60,14 +60,13 @@ public class RentaDAOTest {
     @Test
     public void testConsultarProductosRentadosPorUsuario() throws Exception {
         System.out.println("consultarProductosRentadosPorUsuario");
+        //arrenge
         String nombreUsuario = "testUser";
         List<Producto> expResult = new ArrayList<>();
-        expResult.add(renta.getProducto().get(0)); // Esperar que el producto de prueba esté en la lista
-
-        // Actuar
+        expResult.add(renta.getProducto().get(0));
+        // Act
         List<Producto> result = rentaDAO.consultarProductosRentadosPorUsuario(nombreUsuario);
-
-        // Aserciones
+        // Assert
         assertEquals(expResult.size(), result.size());
         assertEquals(expResult.get(0).getIsbn(), result.get(0).getIsbn());
     }
@@ -75,12 +74,12 @@ public class RentaDAOTest {
     @Test
     public void testConsultarHistorialRentasPorUsuario() throws Exception {
         System.out.println("consultarHistorialRentasPorUsuario");
+        //arrenge
         String nombreUsuario = "testUser";
-
-        // Actuar
+        // Act
         List<Object> result = rentaDAO.consultarHistorialRentasPorUsuario(nombreUsuario);
 
-        // Aserciones
+        // Assert
         assertNotNull(result);
         assertFalse(result.isEmpty());
     }

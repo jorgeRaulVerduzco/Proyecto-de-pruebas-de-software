@@ -82,30 +82,24 @@ public class DTOaEntidadBOTest {
         List<ProductoDTO> productosDTO = new ArrayList<>();
         productosDTO.add(productoDTO1);
         productosDTO.add(productoDTO2);
-
         UsuarioDTO usuarioDTO = new UsuarioDTO("usuario1", "contrasena123");
         usuarioDTO.setProductos(productosDTO);
 //act
         DTOaEntidadBO instance = new DTOaEntidadBO();
-
         Usuario result = instance.ConvertirUsuarioDTO(usuarioDTO);
-
         Usuario expResult = new Usuario();
         expResult.setNombreUsuario("usuario1");
         expResult.setContraseña("contrasena123");
-
         List<Producto> productosEsperados = new ArrayList<>();
         for (ProductoDTO pDTO : productosDTO) {
             Producto producto = new Producto(pDTO.getIsbn(), pDTO.getTitulo(), pDTO.getAutor(), pDTO.getTipo(), pDTO.getEditorial(), pDTO.getPrecio(), pDTO.getCategoria(), pDTO.getCantidad());
             productosEsperados.add(producto);
         }
         expResult.setProductosVendidos(productosEsperados);
-
 //assert
         assertEquals(expResult.getNombreUsuario(), result.getNombreUsuario());
         assertEquals(expResult.getContraseña(), result.getContraseña());
         assertEquals(expResult.getProductosVendidos().size(), result.getProductosVendidos().size());
-
         for (int i = 0; i < expResult.getProductosVendidos().size(); i++) {
             assertEquals(expResult.getProductosVendidos().get(i).getIsbn(), result.getProductosVendidos().get(i).getIsbn());
             assertEquals(expResult.getProductosVendidos().get(i).getTitulo(), result.getProductosVendidos().get(i).getTitulo());
@@ -163,19 +157,14 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConnvertirPagoOxxoDTO() {
-        System.out.println("ConnvertirPagoOxxoDTO");
-
 //arrenge
         String codigoBarrasOxxo = "123456789012";
         PagoPorOxxoDTO pagoOxxoDTO = new PagoPorOxxoDTO(codigoBarrasOxxo);
-
         DTOaEntidadBO instance = new DTOaEntidadBO();
-
         // Act
         PagoPorOxxo expResult = new PagoPorOxxo();
         expResult.setCodigoBarrasOxxo(codigoBarrasOxxo);
         PagoPorOxxo result = instance.ConnvertirPagoOxxoDTO(pagoOxxoDTO);
-
 //assert
         assertEquals(expResult.getCodigoBarrasOxxo(), result.getCodigoBarrasOxxo());
 
@@ -253,21 +242,17 @@ public class DTOaEntidadBOTest {
         productoDTO.setTitulo("Libro Ejemplo");
         productoDTO.setAutor("Autor Ejemplo");
         rentaDTO.setProductoDTO(Arrays.asList(productoDTO));
-
         RentaPorOxxoDTO rentaPorOxxoDTO = new RentaPorOxxoDTO("123456789");
         rentaDTO.setRentaPorOxxoDTO(Arrays.asList(rentaPorOxxoDTO));
-
         RentaPorTarjetaDTO rentaPorTarjetaDTO = new RentaPorTarjetaDTO();
         rentaPorTarjetaDTO.setTipoTarjeta("Visa");
         rentaPorTarjetaDTO.setNumeroTarjeta("1234-5678-9012-3456");
         rentaPorTarjetaDTO.setFechaExpiracion(fechaExpiracion);
         rentaPorTarjetaDTO.setCodigoSeguridad("123");
         rentaDTO.setRentaPorTarjetaDTO(Arrays.asList(rentaPorTarjetaDTO));
-
 //act
         DTOaEntidadBO instance = new DTOaEntidadBO();
         Renta result = instance.convertirRentaDTO(rentaDTO);
-
 //assert
         assertNotNull(result);
         assertEquals(rentaDTO.getCantidad(), result.getCantidad());
@@ -280,17 +265,14 @@ public class DTOaEntidadBOTest {
     @Test
     public void testConvertitRentaOxxoDTO() {
         System.out.println("convertitRentaOxxoDTO");
-
 //Arrenge
         String codigoBarrasOxxo = "123456789";
         RentaPorOxxoDTO rentaPorOxxoDTO = new RentaPorOxxoDTO(codigoBarrasOxxo);
 //act
         DTOaEntidadBO instance = new DTOaEntidadBO();
-
         RentaPorOxxo result = instance.convertitRentaOxxoDTO(rentaPorOxxoDTO);
         RentaPorOxxo expResult = new RentaPorOxxo();
         expResult.setCodigoBarrasOxxo(codigoBarrasOxxo);
-
         // assert
         assertEquals(expResult.getCodigoBarrasOxxo(), result.getCodigoBarrasOxxo(), "Los códigos de barras deberían ser iguales.");
     }

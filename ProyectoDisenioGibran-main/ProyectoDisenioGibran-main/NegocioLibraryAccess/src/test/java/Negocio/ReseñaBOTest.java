@@ -51,7 +51,6 @@ public class ReseñaBOTest {
         reseñaBO.generarReseña(reseñaDTO);
         //Assert
         assertEquals("user", reseñaDTO.getUsuario().getNombreUsuario());
-
     }
 
     @Test

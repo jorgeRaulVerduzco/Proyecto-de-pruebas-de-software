@@ -63,24 +63,20 @@ public class PagoDAOTest {
     public void testAgregarPago() throws Exception {
         System.out.println("agregarPago");
         PagoDAO instance = new PagoDAO();
-        
         // Act
         instance.agregarPago(pago);
-        
-        // Assert: Comprobar que el pago se agregó correctamente
-        List<Producto> productosComprados = instance.consultarProductosCompradosPorUsuario("nombreUsuario"); // Cambia "nombreUsuario" a un usuario válido
+        // Assert
+        List<Producto> productosComprados = instance.consultarProductosCompradosPorUsuario("nombreUsuario"); 
         assertNotNull(productosComprados);
     }
 
     @Test
     public void testConsultarProductosCompradosPorUsuario() throws Exception {
         System.out.println("consultarProductosCompradosPorUsuario");
-        String nombreUsuario = "nombreUsuario"; // Cambia "nombreUsuario" a un usuario válido
+        String nombreUsuario = "nombreUsuario"; 
         PagoDAO instance = new PagoDAO();
-        
         // Act
         List<Producto> result = instance.consultarProductosCompradosPorUsuario(nombreUsuario);
-        
         // Assert
         assertNotNull(result);
     }

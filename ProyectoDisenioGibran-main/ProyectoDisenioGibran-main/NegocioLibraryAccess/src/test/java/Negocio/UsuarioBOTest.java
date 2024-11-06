@@ -31,10 +31,8 @@ public class UsuarioBOTest {
         //arrenge
         UsuarioDTO usuarioDTO = new UsuarioDTO("testUser", "testPassword");
         usuarioDTO.setProductos(new ArrayList<>());
-
 //Act
         usuarioBO.agregarUsuario(usuarioDTO);
-
 //Assert
         assertTrue(usuarioBO.buscarUsuario("testUser", "testPassword"));
     }
@@ -48,7 +46,6 @@ public class UsuarioBOTest {
         UsuarioDTO usuarioDTO = new UsuarioDTO(nombreUsuario, contraseña);
         usuarioDTO.setProductos(new ArrayList<>());
         usuarioBO.agregarUsuario(usuarioDTO);
-
         //act
         boolean expResult = true;
         boolean result = usuarioBO.buscarUsuario(nombreUsuario, contraseña);
@@ -104,7 +101,6 @@ public class UsuarioBOTest {
         usuarioBO.agregarUsuario(usuarioDTO);
         ProductoDTO productoVendido = new ProductoDTO(123456, "testProduct", "TestAuthor", "Book", "TestEditorial", 19.99, "TestCategory", 5);
         usuarioBO.agregarProductoVendido(nombreUsuario, productoVendido);
-
         List<ProductoDTO> result = usuarioBO.obtenerHistorialProductosVendidos(nombreUsuario);
         //assert
         assertNotNull(result);

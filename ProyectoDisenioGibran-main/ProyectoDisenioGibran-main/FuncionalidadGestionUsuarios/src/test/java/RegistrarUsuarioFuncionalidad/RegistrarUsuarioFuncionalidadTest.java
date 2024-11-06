@@ -25,14 +25,14 @@ public class RegistrarUsuarioFuncionalidadTest {
      */
     @Test
     public void testRegistrarNuevoUsuario() {
+        //arrenge
         IUsuarioBO usuarioBOMock = mock(IUsuarioBO.class);
         RegistrarUsuarioFuncionalidad registrarFuncionalidad = new RegistrarUsuarioFuncionalidad(usuarioBOMock);
-        
         UsuarioDTO usuarioDTO = new UsuarioDTO();
+        //act
         usuarioDTO.setNombreUsuario("Servando");
-        
         registrarFuncionalidad.registrarNuevoUsuario(usuarioDTO);
-        
+       //assert
         verify(usuarioBOMock).agregarUsuario(usuarioDTO);
     }
     

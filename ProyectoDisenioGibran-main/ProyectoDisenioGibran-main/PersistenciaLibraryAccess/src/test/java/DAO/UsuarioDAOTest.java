@@ -29,12 +29,11 @@ public class UsuarioDAOTest {
     @Test
     public void testAgregarUsuario() throws Exception {
         System.out.println("agregarUsuario");
+        //assert
         Usuario usuario = new Usuario(ObjectId.get(), "testUser", "testPassword");
-
-        // Agregar usuario
+        // Act
         usuarioDAO.agregarUsuario(usuario);
-
-        // Verificar si el usuario fue agregado correctamente
+        // assert
         List<Usuario> usuarios = usuarioDAO.obtenerTodosLosUsuarios();
         assertTrue(usuarios.stream().anyMatch(u -> u.getNombreUsuario().equals("testUser")), "El usuario no fue agregado correctamente.");
     }
@@ -42,9 +41,9 @@ public class UsuarioDAOTest {
     @Test
     public void testAgregarProductoVendido() throws Exception {
         System.out.println("agregarProductoVendido");
+        //rrenge
         Usuario usuario = new Usuario(ObjectId.get(), "testUser", "testPassword");
-        usuarioDAO.agregarUsuario(usuario); // Asegurarse de que el usuario existe
-
+        usuarioDAO.agregarUsuario(usuario);
         Producto productoVendido = new Producto();
         productoVendido.setId(ObjectId.get());
         productoVendido.setIsbn(123456);
@@ -55,20 +54,18 @@ public class UsuarioDAOTest {
         productoVendido.setPrecio(10.0);
         productoVendido.setCategoria("Categoria");
         productoVendido.setCantidad(5);
+        //act
         usuarioDAO.agregarProductoVendido("testUser", productoVendido);
-
+//assert
         List<Producto> productosVendidos = usuarioDAO.obtenerHistorialProductosVendidos("testUser");
         assertTrue(productosVendidos.stream().anyMatch(p -> p.getTitulo().equals("Libro de Prueba")), "El producto vendido no fue agregado correctamente.");
     }
 
     @Test
     public void testObtenerHistorialProductosVendidos() throws Exception {
-
-        System.out.println("obtenerHistorialProductosVendidos");
         //arrenge
         String nombreUsuario = "testUser";
         List<Producto> expResult = new ArrayList<>();
-
         Usuario usuario = new Usuario(ObjectId.get(), nombreUsuario, "testPassword");
         usuarioDAO.agregarUsuario(usuario);
         Producto productoVendido = new Producto();
@@ -87,18 +84,18 @@ public class UsuarioDAOTest {
         expResult.add(productoVendido);
         //assert
         assertNotNull(result, "El resultado no debe ser nulo.");
-
     }
 
     @Test
     public void testBuscarUsuario() throws Exception {
         System.out.println("buscarUsuario");
+        //asset
         String nombreUsuario = "testUser";
         String contraseña = "testPassword";
-
         Usuario usuario = new Usuario(ObjectId.get(), nombreUsuario, contraseña);
+        //act
         usuarioDAO.agregarUsuario(usuario);
-
+        //assert
         boolean result = usuarioDAO.buscarUsuario(nombreUsuario, contraseña);
         assertTrue(result, "El usuario debería ser encontrado.");
         boolean resultNoExistente = usuarioDAO.buscarUsuario("usuarioInexistente", "contraseña");

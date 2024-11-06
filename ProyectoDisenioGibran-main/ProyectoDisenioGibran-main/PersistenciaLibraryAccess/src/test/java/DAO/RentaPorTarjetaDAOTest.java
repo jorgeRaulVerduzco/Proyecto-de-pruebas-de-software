@@ -32,7 +32,7 @@ public class RentaPorTarjetaDAOTest {
     @Test
     public void testAgregarRenta() throws Exception {
         System.out.println("agregarRenta");
-
+//arrenge
         RentaPorTarjeta renta = new RentaPorTarjeta(
                 new ObjectId(),
                 "Visa",
@@ -40,11 +40,9 @@ public class RentaPorTarjetaDAOTest {
                 new Date(System.currentTimeMillis() + 100000000L),
                 "123"
         );
-
-        // Ejecutar el método a probar
+        //act
         instance.agregarRenta(renta);
-
-        // Verificar que se haya llamado a insertOne con el objeto correcto
+        // asset
         verify(mockedCollection).insertOne(renta);
     }
 }

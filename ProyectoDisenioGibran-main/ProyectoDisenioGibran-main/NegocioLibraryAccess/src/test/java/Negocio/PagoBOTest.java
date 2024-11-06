@@ -85,13 +85,10 @@ public class PagoBOTest {
     public void testComprarProducto() throws PersistenciaException {
 //arrenge
         double costo = 299.99;
-
 // Act
         pagoBO.ComprarProducto(pagoDTO);
-
         // Assert
         assertEquals(costo, pagoDTO.getCostoTotal(), 0.01);
-
     }
 
     @Test
@@ -110,10 +107,8 @@ public class PagoBOTest {
         // Arrange
         pagoPorTarjetaDTO.setUsuarioDTO(Arrays.asList(usuarioDTO));
         pagoPorTarjetaDTO.setProductoDTO(Arrays.asList(productoDTO));
-
         // Act
         pagoBO.ComprarProductoPorTarjeta(pagoPorTarjetaDTO);
-
         // Assert
         assertNotNull(pagoPorTarjetaDTO.getNumeroTarjeta());
         assertEquals(16, pagoPorTarjetaDTO.getNumeroTarjeta().length());
@@ -142,7 +137,6 @@ public class PagoBOTest {
         // Arrange
         int anio = 2024;
         int mes = 3;
-
         // Act
         List<Object> historial = pagoBO.consultarHistorialComprasPorUsuarioMeses("testUser", anio, mes);
 

@@ -34,13 +34,10 @@ public class IniciarSesionTest {
         //act
         iniciarSesion.simularClicIniciarSesion();
         UsuarioDTO usuarioDTO = new UsuarioDTO(iniciarSesion.getUsuarioTexto(), iniciarSesion.getContraseñaTexto());
-
         // assert
         assertEquals("jose", usuarioDTO.getNombreUsuario());
         assertEquals("juan", usuarioDTO.getContraseña());
 
-
-       
     }
 
 }

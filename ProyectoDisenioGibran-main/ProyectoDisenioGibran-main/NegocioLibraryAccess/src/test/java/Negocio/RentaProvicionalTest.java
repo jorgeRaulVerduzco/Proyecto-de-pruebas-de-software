@@ -24,8 +24,6 @@ public class RentaProvicionalTest {
      */
     @Test
     public void testGetRentaProvicional() {
-        System.out.println("getRentaProvicional");
-
         //Arrange
         RentaDTO rentaProvicional = new RentaDTO();
         rentaProvicional.setId(new ObjectId());

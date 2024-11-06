@@ -30,19 +30,13 @@ public class ProductosPorAutorTest {
     public void testBuscarProductosPorAutor() {
         IProductoBO mockProductoBO = mock(IProductoBO.class);
         ProductosPorAutor productosPorAutor = new ProductosPorAutor(mockProductoBO);
-
         String autor = "Autor 1";
         List<ProductoDTO> productosEsperados = new ArrayList<>();
         productosEsperados.add(new ProductoDTO(1, "Producto 1", "Autor 1", "Tipo 1", "Editorial 1", 100.0, "Categoría 1", 10));
-        
-         when(mockProductoBO.buscarProductosPorAutor(autor)).thenReturn(productosEsperados);
-         
-            List<ProductoDTO> productosObtenidos = productosPorAutor.buscarProductosPorAutor(autor);
-            
-            verify(mockProductoBO).buscarProductosPorAutor(autor);
-            
-            assertEquals(productosEsperados, productosObtenidos);
-            
+        when(mockProductoBO.buscarProductosPorAutor(autor)).thenReturn(productosEsperados);
+        List<ProductoDTO> productosObtenidos = productosPorAutor.buscarProductosPorAutor(autor);
+        verify(mockProductoBO).buscarProductosPorAutor(autor);
+        assertEquals(productosEsperados, productosObtenidos);
     }
 
 }

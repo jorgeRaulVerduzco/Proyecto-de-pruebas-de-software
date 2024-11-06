@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="IniciarSesionFuncionalidad.IniciarSesionFuncionalidadTest" time="2.472" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="IniciarSesionFuncionalidad.IniciarSesionFuncionalidadTest" time="1.793" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,8 +15,9 @@
     <property name="user.country" value="MX"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\INEGI\AppData\Local\Temp\surefire3219125558788305739\surefirebooter-20241102171352287_3.jar C:\Users\INEGI\AppData\Local\Temp\surefire3219125558788305739 2024-11-02T17-13-51_933-jvmRun1 surefire-20241102171352287_1tmp surefire_0-20241102171352287_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\INEGI\AppData\Local\Temp\surefire7525510223965027677\surefirebooter-20241106013448636_3.jar C:\Users\INEGI\AppData\Local\Temp\surefire7525510223965027677 2024-11-06T01-34-48_413-jvmRun1 surefire-20241106013448636_1tmp surefire_0-20241106013448636_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="IniciarSesionFuncionalidad.IniciarSesionFuncionalidadTest"/>
     <property name="surefire.test.class.path" value="C:\Users\INEGI\Downloads\Proyecto de pruebas de software\ProyectoDisenioGibran-main\ProyectoDisenioGibran-main\FuncionalidadGestionUsuarios\target\test-classes;C:\Users\INEGI\Downloads\Proyecto de pruebas de software\ProyectoDisenioGibran-main\ProyectoDisenioGibran-main\FuncionalidadGestionUsuarios\target\classes;C:\Users\INEGI\.m2\repository\com\mycompany\LibraryAccessDTO\1.0-SNAPSHOT\LibraryAccessDTO-1.0-SNAPSHOT.jar;C:\Users\INEGI\.m2\repository\org\mongodb\mongodb-driver-sync\4.5.0\mongodb-driver-sync-4.5.0.jar;C:\Users\INEGI\.m2\repository\org\mongodb\bson\4.5.0\bson-4.5.0.jar;C:\Users\INEGI\.m2\repository\org\mongodb\mongodb-driver-core\4.5.0\mongodb-driver-core-4.5.0.jar;C:\Users\INEGI\.m2\repository\com\mycompany\NegocioLibraryAccess\1.0-SNAPSHOT\NegocioLibraryAccess-1.0-SNAPSHOT.jar;C:\Users\INEGI\.m2\repository\com\mycompany\PersistenciaLibraryAccess\1.0-SNAPSHOT\PersistenciaLibraryAccess-1.0-SNAPSHOT.jar;C:\Users\INEGI\.m2\repository\org\mockito\mockito-core\5.4.0\mockito-core-5.4.0.jar;C:\Users\INEGI\.m2\repository\net\bytebuddy\byte-buddy\1.14.5\byte-buddy-1.14.5.jar;C:\Users\INEGI\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.5\byte-buddy-agent-1.14.5.jar;C:\Users\INEGI\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\INEGI\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\INEGI\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\INEGI\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\INEGI\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\INEGI\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\INEGI\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\INEGI\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\INEGI"/>
@@ -30,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\INEGI\AppData\Local\Temp\surefire3219125558788305739\surefirebooter-20241102171352287_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\INEGI\AppData\Local\Temp\surefire7525510223965027677\surefirebooter-20241106013448636_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.1+8-16"/>
@@ -51,7 +52,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-22\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\INEGI\AppData\Local\Microsoft\WindowsApps;C:\Users\INEGI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\INEGI\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-22\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\INEGI\AppData\Local\Microsoft\WindowsApps;C:\Users\INEGI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\INEGI\AppData\Local\GitHubDesktop\bin;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -59,12 +60,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testIniciarSesion" classname="IniciarSesionFuncionalidad.IniciarSesionFuncionalidadTest" time="2.398">
+  <testcase name="testIniciarSesion" classname="IniciarSesionFuncionalidad.IniciarSesionFuncionalidadTest" time="1.736">
     <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\INEGI\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.5\byte-buddy-agent-1.14.5.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
 ]]></system-err>
   </testcase>
-  <testcase name="testObtenerUsuarioDTO" classname="IniciarSesionFuncionalidad.IniciarSesionFuncionalidadTest" time="0.013"/>
+  <testcase name="testObtenerUsuarioDTO" classname="IniciarSesionFuncionalidad.IniciarSesionFuncionalidadTest" time="0.011"/>
 </testsuite>

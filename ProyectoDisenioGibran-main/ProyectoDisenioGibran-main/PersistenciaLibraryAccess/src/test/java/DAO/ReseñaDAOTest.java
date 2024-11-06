@@ -60,10 +60,8 @@ public class ReseñaDAOTest {
     @Test
     public void testObtenerReseñasDeProducto() throws Exception {
         System.out.println("testObtenerReseñasDeProducto");
-
         // Act
         List<Object> reseñasProducto = reseñaDAO.obtenerReseñasDeProducto(producto.getIsbn());
-
         // Assert
         assertNotNull(reseñasProducto, "La lista de reseñas no debe ser nula.");
         assertFalse(reseñasProducto.isEmpty(), "No se obtuvieron reseñas del producto.");
@@ -75,25 +73,20 @@ public class ReseñaDAOTest {
     @Test
     public void testObtenerReseñasDeUsuario() throws Exception {
         System.out.println("testObtenerReseñasDeUsuario");
-
         // Arrange
         String nombreUsuario = usuario.getNombreUsuario(); // Usar el nombre de usuario creado en setUp
         ReseñaDAO instance = new ReseñaDAO();
 
         // Act
         List<Object> reseñasUsuario = instance.obtenerReseñasDeUsuario(nombreUsuario);
-
         assertNotNull(reseñasUsuario, "La lista de reseñas del usuario no debe ser nula.");
         System.out.println("Número de reseñas encontradas para el usuario " + nombreUsuario + ": " + reseñasUsuario.size());
-
         for (Object reseña : reseñasUsuario) {
             System.out.println(reseña);
         }
-
         if (!reseñasUsuario.isEmpty()) {
             Map<String, Object> primeraReseña = (Map<String, Object>) reseñasUsuario.get(0); // Cast a Map
             Object rating = primeraReseña.get("rating");
-
             // Assert
             assertNotNull(rating, "El rating no debe ser nulo.");
             assertTrue(rating instanceof Number, "El rating debe ser un número.");

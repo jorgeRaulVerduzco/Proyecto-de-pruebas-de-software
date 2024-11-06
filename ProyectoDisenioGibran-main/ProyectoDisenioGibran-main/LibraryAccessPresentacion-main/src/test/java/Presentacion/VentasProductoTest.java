@@ -37,19 +37,14 @@ public class VentasProductoTest {
         ventasProducto.setEditorialTexto("Test Editorial");
         // Act
         ventasProducto.getBtnAgregarProducto().doClick();
-
         // Assert
         ProductoDTO productoDTO = new ProductoDTO(
                 Integer.parseInt(ventasProducto.getTxtIsbn()),
                 ventasProducto.getTxtTitulo(),
                 ventasProducto.getTxtAutor(),
                 ventasProducto.getTxtTipo(),
-                ventasProducto.getTxtEditorial(),
-                Double.parseDouble(ventasProducto.getTxtPrecio()),
-                ventasProducto.getTxtCategoria(),
-                Integer.parseInt(ventasProducto.getComboBoxCantidad())
+                ventasProducto.getTxtEditorial(),  Double.parseDouble(ventasProducto.getTxtPrecio()), ventasProducto.getTxtCategoria(),  Integer.parseInt(ventasProducto.getComboBoxCantidad())
         );
-
         assertEquals("1234", String.valueOf(productoDTO.getIsbn()));
         assertEquals("Test Book", productoDTO.getTitulo());
     }

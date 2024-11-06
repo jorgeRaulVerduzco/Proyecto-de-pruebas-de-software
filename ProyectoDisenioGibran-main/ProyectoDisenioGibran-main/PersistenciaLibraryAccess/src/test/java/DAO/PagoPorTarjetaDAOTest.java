@@ -43,7 +43,6 @@ public class PagoPorTarjetaDAOTest {
         System.out.println("agregarPago");
         //arrenge
         Date fechaSql = new Date(System.currentTimeMillis());
-
         PagoPorTarjeta pagoPorTarjeta = new PagoPorTarjeta(
                 new ObjectId(),
                 "Visa",

@@ -79,7 +79,6 @@ public class RentaBOTest {
         rentaBO.rentarProductoPorOxxo(rentaPorOxxoDTO);
         //assert
         assertTrue(true);
-
     }
 
     @Test
@@ -95,7 +94,6 @@ public class RentaBOTest {
         rentaBO.rentarProductoPorTarjeta(rentaPorTarjetaDTO);
         //assert
         assertTrue(true);
-
     }
 
     @Test

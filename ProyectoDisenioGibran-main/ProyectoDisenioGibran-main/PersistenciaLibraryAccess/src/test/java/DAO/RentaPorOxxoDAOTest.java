@@ -38,13 +38,10 @@ public class RentaPorOxxoDAOTest {
     @Test
     public void testAgregarRenta() throws Exception {
          System.out.println("agregarRenta");
-
         //arrenge
         RentaPorOxxo renta = new RentaPorOxxo(new ObjectId(), "1234567890123");
-
         // act
         instance.agregarRenta(renta);
-
         // Assert
         verify(mockedCollection).insertOne(renta);
     }
