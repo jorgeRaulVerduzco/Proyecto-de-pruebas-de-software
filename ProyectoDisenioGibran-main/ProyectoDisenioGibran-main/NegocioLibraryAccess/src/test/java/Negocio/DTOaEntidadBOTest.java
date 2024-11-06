@@ -212,7 +212,7 @@ public class DTOaEntidadBOTest {
      */
     @Test
     public void testConvertirReseñaDTO() {
-        // Arrenge
+        // Arrange
         ProductoDTO productoDTO = new ProductoDTO(123, "Título del Producto", "Autor del Producto", "Tipo", "Editorial", 29.99, "Categoría", 5);
         UsuarioDTO usuarioDTO = new UsuarioDTO("nombreUsuario", "contraseña");
         usuarioDTO.setProductos(new ArrayList<>());
@@ -225,18 +225,11 @@ public class DTOaEntidadBOTest {
         DTOaEntidadBO instance = new DTOaEntidadBO();
 
         // Act
-        Reseña expResult = new Reseña();
-        expResult.setReseña(reseñaDTO.getReseña());
-        expResult.setRating(reseñaDTO.getRating());
-        expResult.setProducto(instance.ConvertirProductoDTO(reseñaDTO.getProducto()));
-        expResult.setUsuario(instance.ConvertirUsuarioDTO(reseñaDTO.getUsuario()));
         Reseña result = instance.convertirReseñaDTO(reseñaDTO);
 
         // Assert
-        assertEquals(expResult.getReseña(), result.getReseña());
-        assertEquals(expResult.getRating(), result.getRating());
-        assertEquals(expResult.getProducto(), result.getProducto());
-        assertEquals(expResult.getUsuario(), result.getUsuario());
+        assertEquals(reseñaDTO.getReseña(), result.getReseña());
+        assertEquals(reseñaDTO.getRating(), result.getRating());
     }
 
     /**

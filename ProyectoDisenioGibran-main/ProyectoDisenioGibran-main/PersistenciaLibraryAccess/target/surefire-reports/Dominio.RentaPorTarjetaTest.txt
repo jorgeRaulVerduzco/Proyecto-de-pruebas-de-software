@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Dominio.RentaPorTarjetaTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in Dominio.RentaPorTarjetaTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.040 s -- in Dominio.RentaPorTarjetaTest
