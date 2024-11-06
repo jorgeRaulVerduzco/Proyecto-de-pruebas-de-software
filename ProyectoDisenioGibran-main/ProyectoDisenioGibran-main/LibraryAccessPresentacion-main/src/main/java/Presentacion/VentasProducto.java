@@ -300,6 +300,78 @@ public class VentasProducto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
+    // Setters para los campos de texto
+public void setIsbnTexto(String isbn) {
+    this.txtIsbn.setText(isbn);
+}
+
+public void setTituloTexto(String titulo) {
+    this.txtTitulo.setText(titulo);
+}
+
+public void setAutorTexto(String autor) {
+    this.txtAutor.setText(autor);
+}
+
+public void setTipoTexto(String tipo) {
+    this.txtTipo.setText(tipo);
+}
+
+public void setPrecioTexto(String precio) {
+    this.txtPrecio.setText(precio);
+}
+
+public void setCategoriaTexto(String categoria) {
+    this.txtCategoria.setText(categoria);
+}
+
+public void setEditorialTexto(String editorial) {
+    this.txtEditorial.setText(editorial);
+}
+
+// Getters para obtener el texto de los campos
+public String getTxtIsbn() {
+    return txtIsbn.getText();
+}
+
+public String getTxtTitulo() {
+    return txtTitulo.getText();
+}
+
+public String getTxtAutor() {
+    return txtAutor.getText();
+}
+
+public String getTxtTipo() {
+    return txtTipo.getText();
+}
+
+public String getTxtPrecio() {
+    return txtPrecio.getText();
+}
+
+public String getTxtCategoria() {
+    return txtCategoria.getText();
+}
+
+public String getTxtEditorial() {
+    return txtEditorial.getText();
+}
+
+public String getComboBoxCantidad() {
+    return comboBoxCantidad.getSelectedItem().toString();
+}
+
+// Getter para el botón de agregar producto (para testing)
+public javax.swing.JButton getBtnAgregarProducto() {
+    return btnAgregarProducto;
+}
+
+// Getter para el botón de regresar (para testing)
+public javax.swing.JToggleButton getBtnRegresar() {
+    return jToggleButton4;
+}
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarProducto;
     private javax.swing.JComboBox<String> comboBoxCantidad;

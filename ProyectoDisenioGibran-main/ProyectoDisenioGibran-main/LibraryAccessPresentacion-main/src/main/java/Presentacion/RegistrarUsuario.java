@@ -187,8 +187,28 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_btnCancelarActionPerformed
+    public void setUsuarioTexto(String usuario) {
+        this.txtNombreUsuario.setText(usuario);
+    }
 
-  
+    public void setContraseñaTexto(String contraseña) {
+        this.txtContraseña.setText(contraseña);
+    }
+    public String getTxtNombreUsuario() {
+        return txtNombreUsuario.getText();
+    }
+
+    public String  getTxtContraseña() {
+        return txtContraseña.getText();
+    }
+
+    public javax.swing.JButton getBtnAceptar() {
+        return btnAceptar;
+    }
+
+    public javax.swing.JButton getBtnCancelar() {
+        return btnCancelar;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bnAtras;

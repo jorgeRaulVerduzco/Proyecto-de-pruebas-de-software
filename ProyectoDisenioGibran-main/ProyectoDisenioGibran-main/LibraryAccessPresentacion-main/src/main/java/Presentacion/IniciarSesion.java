@@ -156,22 +156,21 @@ public class IniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        
 
-        boolean sesionIniciada2 = sesionIniciada.iniciarSesion(txtNombreUsuario.getText(),txtContraseña.getText());
+        boolean sesionIniciada2 = sesionIniciada.iniciarSesion(txtNombreUsuario.getText(), txtContraseña.getText());
         if (sesionIniciada2) {
-           UsuarioDTO usuarioDTO= new UsuarioDTO();
-           usuarioDTO.setNombreUsuario(txtNombreUsuario.getText());
-           usuarioDTO.setContraseña(txtContraseña.getText());
-           UsuarioSesion.setUsuarioSeleccionado(usuarioDTO);
+            UsuarioDTO usuarioDTO = new UsuarioDTO();
+            usuarioDTO.setNombreUsuario(txtNombreUsuario.getText());
+            usuarioDTO.setContraseña(txtContraseña.getText());
+            UsuarioSesion.setUsuarioSeleccionado(usuarioDTO);
             MenuPrincipal menu = new MenuPrincipal();
             menu.setVisible(true);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(rootPane, "NO SE ENCONTRÓ EL USUARIO O CONTRASEÑA INCORRECTA");
         }
-        
-        
+
+
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -215,6 +214,29 @@ public class IniciarSesion extends javax.swing.JFrame {
         });
     }
 
+    public void setUsuarioTexto(String usuario) {
+        this.txtNombreUsuario.setText(usuario);
+    }
+
+    public void setContraseñaTexto(String contraseña) {
+        this.txtContraseña.setText(contraseña);
+    }
+
+    public String getUsuarioTexto() {
+        return this.txtNombreUsuario.getText();
+    }
+
+    public String getContraseñaTexto() {
+        return this.txtContraseña.getText();
+    }
+
+    public void simularClicIniciarSesion() {
+        btnAceptar.doClick();
+    }
+
+    public void simularClicRegistrar() {
+        btnCancelar.doClick();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnCancelar;
